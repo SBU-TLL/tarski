@@ -1,4 +1,6 @@
+//var TEST_MODE = true;
 var TEST_MODE = false;
+
 var UNLOCK_ALL = false;
 var ENABLE_LASER_GRID = false;
 
@@ -681,8 +683,8 @@ function loadTutorial() {
             tutorial.push(level);
         }
         if (TEST_MODE) {
-            //loadLevel(levels.length - 1);
-            //loadLevelFromCode("5-7");
+            //loadLevel(1);
+            //loadLevelFromCode("1-1");
         }
     });
 }
@@ -929,7 +931,7 @@ function startLevel(id) {
         setLight(currentLevel, "active");
         loadLevelFromCode(currentChapter + "-" + currentLevel);
         showExitLever();
-    }, 1000);
+    }, 2000);
 }
 
 // Complete a level; animate the shapes fading out and move on to the next level if possible 
