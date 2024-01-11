@@ -625,9 +625,9 @@ function loadHelpTextFromCode(code) {
         }
     }
     if (index > -1) {
-        makeHelpText(index);
+        makeHelpText(tutorial[index]);
     } else {
-        makeHelpText(-1);
+        makeHelpText();
     }
 }
 
@@ -687,13 +687,14 @@ function loadTutorial() {
             //loadLevel(1);
             //loadLevelFromCode("1-1");
         }
+  console.log(tutorial)
     });
 }
 
-function makeHelpText(index) {
+function makeHelpText(tutorial) {
     $("#tutorial").empty();
-    if (index > -1) {
-        helptext = tutorial[index].lines;
+    if (tutorial) {
+        helptext = tutorial.lines;
         for (var i = 0; i < helptext.length; i++) {
             var help = helptext[i];
             // Make box
@@ -718,7 +719,8 @@ function makeHelpText(index) {
 }
 
 function playGameIntro() {
-    // Exit lever
+    // Exit lever'
+    makeHelpText(tutorial[0])
     $({
         r: 0
     }).animate({
