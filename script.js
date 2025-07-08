@@ -298,12 +298,12 @@ function shapeEnter(i) {
             "z": -1
         };
     }
-    $("#shape" + i).attr("position", start.x + " " + start.y + " " + start.z);
+    $("#shape" + i)[0].object3D["position"].set(start.x , + start.y , start.z);
     $(start).animate(mid, {
         duration: 400,
         easing: "easeOutQuad",
         step: function () {
-            $("#shape" + i).attr("position", this.x + " " + this.y + " " + this.z);
+            $("#shape" + i)[0].object3D["position"].set(this.x ,  this.y , this.z);
         }
     }).animate({
         "x": pos.x,
@@ -313,7 +313,8 @@ function shapeEnter(i) {
         duration: 800,
         easing: "easeInQuad",
         step: function () {
-            $("#shape" + i).attr("position", this.x + " " + this.y + " " + this.z);
+      	   $("#shape" + i)[0].object3D["position"].set(this.x ,  this.y , this.z); 
+	   //$("#shape" + i).attr("position", this.x + " " + this.y + " " + this.z);
         }
     });
     setTimeout(function () {
