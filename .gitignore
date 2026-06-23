@@ -1,0 +1,10 @@
+# OS / editor junk
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+# Vim swap files
+*.swp
+*.swo
+*.swn
