@@ -1,0 +1,33 @@
+# Keep the production image clean and free of dev/VCS material.
+
+# Version control & this build's own files
+.git
+.gitignore
+.dockerignore
+Dockerfile
+
+# Local DDEV development environment (dev-only; never deployed)
+.ddev/
+.vscode/
+
+# Local env / secrets — production uses runtime env vars, not files
+.env
+.env.*
+
+# Stale, unreferenced local A-Frame copies (~2.2MB; app loads A-Frame from CDN)
+aframe.min.js
+aframe-master.min.js
+
+# Docs
+*.md
+README*
+
+# OS / editor junk (Finder metadata, AppleDouble resource forks, vim swap files)
+.DS_Store
+**/.DS_Store
+._*
+**/._*
+Thumbs.db
+*.swp
+*.swo
+*.swn
